@@ -10,7 +10,7 @@ Features
     Histogram series for visualizing volume data.
   #Installation
    Clone the repository to your local machine:
-   git clone https://github.com/your-username/angular-custom-tradingview-chart.git
+   git clone https://github.com/vijaysandy007/custom-tradingview-chart.git
    
 #Navigate to the project directory:
 cd angular-custom-tradingview-chart
