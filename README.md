@@ -1,27 +1,40 @@
-# Tradingview
+Angular Custom TradingView Chart
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.0.
+This Angular project demonstrates how to create a custom TradingView chart using the Lightweight Charts library.
+Features
 
-## Development server
+    Customized chart layout with background and text color settings.
+    Grid lines customization for both vertical and horizontal lines.
+    Crosshair mode enabled for precise data inspection.
+    Candlestick series for visualizing price data.
+    Histogram series for visualizing volume data.
+  #Installation
+   Clone the repository to your local machine:
+   git clone https://github.com/your-username/angular-custom-tradingview-chart.git
+   
+#Navigate to the project directory:
+cd angular-custom-tradingview-chart
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+#Install dependencies:
+npm install
 
-## Code scaffolding
+#Usage
+Run the Angular application:
+ng serve
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Open your browser and navigate to http://localhost:4200 to view the chart.
 
-## Build
+Configuration
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+You can customize the chart appearance and behavior by modifying the chart options in the app.component.ts file. Refer to the Lightweight Charts documentation for available options.
+License
 
-## Running unit tests
+This project is licensed under the MIT License - see the LICENSE file for details.
+Acknowledgements
+Lightweight Charts: GitHub Repository
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+    
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+   
