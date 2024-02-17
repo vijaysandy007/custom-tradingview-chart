@@ -1,0 +1,14 @@
+
+.wrapper{
+    margin: 50px 50px 0 50px;
+    height: 80vh;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    outline: none;
+
+    &__trading_chart{
+        height: 100%;
+    }
+}
+

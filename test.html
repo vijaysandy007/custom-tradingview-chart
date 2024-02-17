@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TradingView-like Chart</title>
+<style>
+ /* Reset some default browser styles */
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+/* Container for the chart */
+.chart-container {
+  width: 100%;
+  height: 500px; /* Adjust height as needed */
+  background-color: #1e2124;
+  color: #dcdcdc;
+  font-family: Arial, sans-serif;
+}
+
+/* Chart toolbar */
+.chart-toolbar {
+  padding: 10px;
+  background-color: #1e2124;
+  color: #dcdcdc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Chart title */
+.chart-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Chart area */
+.chart-area {
+  width: 100%;
+  height: calc(100% - 40px); /* Adjust height to accommodate toolbar */
+  background-color: #1e2124;
+  position: relative;
+}
+
+/* Chart overlay */
+.chart-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* Button style */
+.chart-button {
+  background-color: #3574d4;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Button hover effect */
+.chart-button:hover {
+  background-color: #265999;
+}
+
+/* Button active effect */
+.chart-button:active {
+  background-color: #1c4c7f;
+}
+
+</style>
+</head>
+<body>
+<div class="chart-container">
+  <button class="play" type="button">CLICK TO PLAY GAME TO DRAW ANOTATION >></button>
+</div>
+
+<script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const chart = LightweightCharts.createChart(document.querySelector('.chart-container'), {
+      width: document.querySelector('.chart-container').clientWidth,
+      height: 400,
+      layout: {
+        backgroundColor: '#000000',
+        textColor: 'rgba(255, 255, 255, 0.9)',
+      },
+      grid: {
+        vertLines: {
+          color: 'rgba(42, 46, 57, 0)',
+        },
+        horzLines: {
+          color: 'rgba(42, 46, 57, 0.6)',
+        },
+      },
+      priceScale: {
+        borderColor: 'rgba(197, 203, 206, 0.8)',
+      },
+    });
+
+    const lineSeries = chart.addLineSeries({
+      lineWidth: 2,
+    });
+
+    const markers = [];
+
+    document.querySelector('.play').addEventListener('click', function() {
+      const currentTime = Math.round(new Date().getTime() / 1000);
+      const markerTime = currentTime - 0;
+
+      markers.push({
+        time: markerTime,
+        position: 'belowBar',
+        color: 'green',
+        shape: 'arrowUp',
+      });
+
+      markers.push({
+        time: markerTime,
+        position: 'aboveBar',
+        color: 'red',
+        shape: 'arrowDown',
+      });
+
+      lineSeries.setMarkers(markers);
+    });
+
+    function fetchData() {
+      const randomNum = Number((Math.random() * 0.9).toFixed(8));
+      const row = { time: CurrentTime(), value: randomNum };
+
+      lineSeries.update(row);
+    }
+
+    setInterval(fetchData, 500);
+
+    function CurrentTime() {
+      return Math.round(new Date().getTime() / 1000);
+    }
+  });
+</script>
+</body>
+</html>
